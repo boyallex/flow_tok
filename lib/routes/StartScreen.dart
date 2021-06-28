@@ -1,5 +1,6 @@
 // import 'dart:html';
 
+import 'package:flow_tok/widgets/Autorization.dart';
 import 'package:flutter/material.dart';
 
 class Entering extends StatefulWidget {
@@ -30,22 +31,22 @@ class _EnteringState extends State<Entering> {
                 child: isTouched
                     ? Container()
                     : Column(
-                      children: [
-                        Padding(
-                          padding: const EdgeInsets.all(22.0),
-                          child: SizedBox(
-                            child: Text(
-                              "Хочу разместить рекламу",
-                              style: TextStyle(
-                                color: Colors.white,
-                                fontSize: 24,
+                        children: [
+                          Padding(
+                            padding: const EdgeInsets.all(22.0),
+                            child: SizedBox(
+                              child: Text(
+                                "Хочу разместить рекламу",
+                                style: TextStyle(
+                                  color: Colors.white,
+                                  fontSize: 24,
+                                ),
+                                textAlign: TextAlign.center,
                               ),
-                              textAlign: TextAlign.center,
+                              width: 204,
                             ),
-                            width: 204,
                           ),
-                        ),
-                        FloatingActionButton.extended(
+                          FloatingActionButton.extended(
                             backgroundColor: Colors.white,
                             onPressed: () {
                               setState(() {
@@ -56,6 +57,8 @@ class _EnteringState extends State<Entering> {
                                     (context) {
                                       return Container(
                                         height: 300,
+                                        width: MediaQuery.of(context).size.width,
+                                        child: Autorization(),
                                       );
                                     },
                                   )
@@ -73,9 +76,9 @@ class _EnteringState extends State<Entering> {
                               style: TextStyle(color: Colors.black),
                             ),
                           ),
-                      ],
-                      mainAxisAlignment: MainAxisAlignment.center,
-                    ),
+                        ],
+                        mainAxisAlignment: MainAxisAlignment.center,
+                      ),
               ),
             ),
           ),
@@ -86,38 +89,57 @@ class _EnteringState extends State<Entering> {
             child: Container(
               color: Colors.deepOrangeAccent,
               child: Center(
-                child: SizedBox(
-                  width: 175,
-                  child: FloatingActionButton.extended(
-                    backgroundColor: Colors.white,
-                    onPressed: () {
-                      setState(() {
-                        isTouched = true;
-                      });
-                      scaffoldKey.currentState!
-                          .showBottomSheet(
-                            (context) {
-                              return Container(
-                                height: 300,
-                              );
-                            },
-                          )
-                          .closed
-                          .whenComplete(
-                            () => setState(
-                              () {
-                                isTouched = false;
-                              },
-                            ),
-                          );
-                    },
-                    label: Text(
-                      "Я блогер",
-                      style: TextStyle(
-                        color: Colors.black,
+                child: Column(
+                  children: [
+                    Padding(
+                      padding: const EdgeInsets.all(22.0),
+                      child: SizedBox(
+                        child: Text(
+                          "Хочу получать деньги за задания",
+                          style: TextStyle(
+                            color: Colors.white,
+                            fontSize: 24,
+                          ),
+                          textAlign: TextAlign.center,
+                        ),
+                        width: 213,
                       ),
                     ),
-                  ),
+                    SizedBox(
+                      width: 175,
+                      child: FloatingActionButton.extended(
+                        backgroundColor: Colors.white,
+                        onPressed: () {
+                          setState(() {
+                            isTouched = true;
+                          });
+                          scaffoldKey.currentState!
+                              .showBottomSheet(
+                                (context) {
+                                  return Container(
+                                    height: 300,
+                                  );
+                                },
+                              )
+                              .closed
+                              .whenComplete(
+                                () => setState(
+                                  () {
+                                    isTouched = false;
+                                  },
+                                ),
+                              );
+                        },
+                        label: Text(
+                          "Я блогер",
+                          style: TextStyle(
+                            color: Colors.black,
+                          ),
+                        ),
+                      ),
+                    ),
+                  ],
+                  mainAxisAlignment: MainAxisAlignment.center,
                 ),
               ),
             ),
