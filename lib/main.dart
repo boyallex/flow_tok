@@ -1,6 +1,7 @@
 // import 'dart:html';
 
-import 'package:flow_tok/routes/StartScreen.dart';
+// import 'package:flow_tok/routes/StartScreen.dart';
+import 'package:flow_tok/routes/main_sreen.dart';
 import 'package:flutter/material.dart';
 
 void main() {
@@ -28,6 +29,6 @@ class MyAppView extends StatefulWidget {
 class _MyAppViewState extends State<MyAppView> {
   @override
   Widget build(BuildContext context) {
-    return Entering();
+    return MainScreen();
   }
 }

@@ -17,7 +17,7 @@ class Autorization extends StatelessWidget {
               fontSize: 21, 
             ),
           ),
-          FloatingActionButton(onPressed: onPressed),
+          FloatingActionButton(onPressed: () {}),
         ],
         crossAxisAlignment: CrossAxisAlignment.start,
       ),

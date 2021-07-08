@@ -147,6 +147,6 @@ class _EnteringState extends State<Entering> {
         ],
       ),
     );
-    ;
+    
   }
 }
