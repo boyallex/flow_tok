@@ -16,7 +16,9 @@ class Header extends StatelessWidget {
     return Text(
       _text,
       style: TextStyle(
-        
+        color: _color,
+        fontSize: _isBold ? 17 : 15,
+        fontWeight: FontWeight.bold,
       ),
     );
   }
