@@ -1,5 +1,6 @@
 // import 'dart:js';
 
+import 'package:flow_tok/widgets/FTButton.dart';
 import 'package:flow_tok/widgets/Texts.dart';
 import 'package:flutter/material.dart';
 
@@ -37,13 +38,15 @@ class _ProfileState extends State<Profile> {
                 padding: const EdgeInsets.only(bottom: 20),
                 child: FTText("15 236.00 ₽", Colors.black, true),
               ),
+              FTButton.violet(
+                "Выплатить",
+                (){},
+              )
             ],
             mainAxisAlignment: MainAxisAlignment.spaceBetween,
             crossAxisAlignment: CrossAxisAlignment.start,
           )),
-          
         ],
-        
       ),
     );
   }
@@ -64,9 +67,8 @@ class FTContainer extends StatelessWidget {
       child: child,
       padding: EdgeInsets.all(20),
       decoration: BoxDecoration(
-        color: Colors.white,
-        borderRadius: BorderRadius.all(Radius.circular(14))
-      ),
+          color: Colors.white,
+          borderRadius: BorderRadius.all(Radius.circular(14))),
       width: MediaQuery.of(context).size.width,
       // width: 100,
     );

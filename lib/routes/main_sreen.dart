@@ -21,11 +21,16 @@ class _MainScreenState extends State<MainScreen> {
     Text("Здесь будут задания"),
     Text("Здесь будут настройки"),
   ];
+  List<String> _pageNames = <String>[
+    "Профиль",
+    "Задания",
+    "Настройки"
+  ];
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppHeader("Профиль"),
+      appBar: AppHeader(_pageNames[_pageIndex]),
       body: Container(
         child: _widgetOptions[_pageIndex],
         color: Colors.grey[350],
@@ -54,22 +59,3 @@ class _MainScreenState extends State<MainScreen> {
     );
   }
 }
-
-// class AppBarDecorationButton extends StatelessWidget implements PreferredSizeWidget {
-//   const AppBarDecorationButton({Key? key}) : super(key: key);
-
-//   @override
-//   Widget build(BuildContext context) {
-//     return Container(
-//       height: 15,
-//       decoration: BoxDecoration(
-//         color: Colors.red,
-//         borderRadius: BorderRadius.only(bottomRight: Radius.circular(11), bottomLeft: Radius.circular(11)),
-//       ),
-//     );
-//   }
-
-//   @override
-//   // TODO: implement preferredSize
-//   Size get preferredSize => Size.fromHeight(5);
-// }
