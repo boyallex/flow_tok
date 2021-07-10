@@ -14,8 +14,6 @@ class AppHeader extends StatelessWidget implements PreferredSizeWidget {
           decoration: BoxDecoration(
             boxShadow: [BoxShadow(
               color: Colors.grey.shade300,
-              // spreadRadius: 5,
-              // blurRadius: 2
             )]
           ),
           width: MediaQuery.of(context).size.width,
@@ -35,10 +33,10 @@ class AppHeader extends StatelessWidget implements PreferredSizeWidget {
                     padding: const EdgeInsets.only(left: 20),
                     child: Icon(Icons.timer_sharp),
                   ),
-                  Header(_pageName, Colors.black, true),
+                  FTText(_pageName, Colors.black, true),
                   Padding(
                     padding: const EdgeInsets.only(right: 20),
-                    child: Icon(Icons.circle),
+                    child: Icon(Icons.account_circle),
                   ),
                 ],
               ),

@@ -1,11 +1,11 @@
 import 'package:flutter/material.dart';
 
-class Header extends StatelessWidget {
+class FTText extends StatelessWidget {
   String _text = "";
   bool _isBold = false;
   Color _color = Colors.black;
   
-  Header(String text, Color color, bool isBold) {
+  FTText(String text, Color color, bool isBold) {
     _text = text;
     _isBold = isBold;
     _color = color;
