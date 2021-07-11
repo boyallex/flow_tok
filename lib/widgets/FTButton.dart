@@ -12,10 +12,12 @@ class FTButton extends StatelessWidget {
       onPressed: this._onPressed(),
       child: Container(
         decoration: const BoxDecoration(
-          gradient: LinearGradient(colors: <Color>[
-            Color(0x2246F3),
-            Color(0x7832F0),
-          ])  
+          gradient: LinearGradient(
+            colors: <Color>[
+              Color(0xff2246F3),
+              Color(0xff7832F0),
+            ],
+          ),
         ),
         child: Text(
           this._buttonText,

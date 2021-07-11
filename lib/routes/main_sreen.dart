@@ -16,15 +16,17 @@ class _MainScreenState extends State<MainScreen> {
       _pageIndex = index;
     });
   }
+
   List<Widget> _widgetOptions = <Widget>[
     Profile(),
     Text("Здесь будут задания"),
     Text("Здесь будут настройки"),
   ];
-  List<String> _pageNames = <String>[
+
+  final _pageNames = [
     "Профиль",
     "Задания",
-    "Настройки"
+    "Настройки",
   ];
 
   @override
@@ -41,7 +43,7 @@ class _MainScreenState extends State<MainScreen> {
         backgroundColor: Colors.white,
         currentIndex: _pageIndex,
         onTap: changePage,
-        items: const <BottomNavigationBarItem>[
+        items: const [
           BottomNavigationBarItem(
             label: "Профиль",
             icon: Icon(Icons.account_circle),

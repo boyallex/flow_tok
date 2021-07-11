@@ -14,6 +14,9 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
+      theme: ThemeData(
+        backgroundColor: Colors.grey[350],
+      ),
       home: MyAppView(),
     );
   }
@@ -29,6 +32,8 @@ class MyAppView extends StatefulWidget {
 class _MyAppViewState extends State<MyAppView> {
   @override
   Widget build(BuildContext context) {
-    return MainScreen();
+    return SafeArea(
+      child: MainScreen(),
+    );
   }
 }
