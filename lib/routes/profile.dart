@@ -51,12 +51,16 @@ class _ProfileState extends State<Profile> {
               ),
             ),
           ),
+          // Ждет зачисления
           Row(
             children: [
               FTContainer.white(
                 Column(
                   children: [
-                    FTText.grey("Ждет зачисления"),
+                    SizedBox(
+                      child: FTText.grey("Ждет зачисления"),
+                      width: 93,
+                    ),
                     FTText.bigNumbers("6 703.50 ₽"),
                   ],
                   crossAxisAlignment: CrossAxisAlignment.start,
@@ -65,15 +69,16 @@ class _ProfileState extends State<Profile> {
               SizedBox(
                 width: 10,
               ),
-              FTContainer.white(
-                Column(
-                  children: [
-                    FTText.grey("Получено за все время"),
-                    FTText.bigNumbers("6 703.50 ₽"),
-                  ],
-                  crossAxisAlignment: CrossAxisAlignment.start,
-                )
-              )
+              FTContainer.white(Column(
+                children: [
+                  SizedBox(
+                    child: FTText.grey("Получено за все время"),
+                    width: 102,
+                  ),
+                  FTText.bigNumbers("6 703.50 ₽"),
+                ],
+                crossAxisAlignment: CrossAxisAlignment.start,
+              ))
             ],
           ),
         ],
