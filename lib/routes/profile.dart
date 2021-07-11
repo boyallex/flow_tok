@@ -28,7 +28,7 @@ class _ProfileState extends State<Profile> {
                     child: Row(
                       children: [
                         FTText.casual("Кошелек"),
-                        Icon(Icons.timer_sharp)
+                        Icon(Icons.timer_sharp),
                       ],
                       mainAxisAlignment: MainAxisAlignment.spaceBetween,
                     ),
@@ -57,9 +57,12 @@ class _ProfileState extends State<Profile> {
               FTContainer.white(
                 Column(
                   children: [
-                    SizedBox(
-                      child: FTText.grey("Ждет зачисления"),
-                      width: 93,
+                    Padding(
+                      padding: const EdgeInsets.only(bottom: 10),
+                      child: SizedBox(
+                        child: FTText.grey("Ждет зачисления"),
+                        width: 93,
+                      ),
                     ),
                     FTText.bigNumbers("6 703.50 ₽"),
                   ],
@@ -71,9 +74,12 @@ class _ProfileState extends State<Profile> {
               ),
               FTContainer.white(Column(
                 children: [
-                  SizedBox(
-                    child: FTText.grey("Получено за все время"),
-                    width: 102,
+                  Padding(
+                    padding: const EdgeInsets.only(bottom: 10),
+                    child: SizedBox(
+                      child: FTText.grey("Получено за все время"),
+                      width: 102,
+                    ),
                   ),
                   FTText.bigNumbers("6 703.50 ₽"),
                 ],
@@ -93,19 +99,12 @@ class FTContainer extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    // double Width;
-    // LayoutBuilder(builder: (context, constraints){
-    //   Width = constraints.maxWidth;
-    // });
-
     return Container(
       child: child,
       padding: EdgeInsets.only(left: 25, right: 25, bottom: 20, top: 20),
       decoration: BoxDecoration(
           color: Colors.white,
           borderRadius: BorderRadius.all(Radius.circular(14))),
-      // width: MediaQuery.of(context).size.width,
-      // width: 100,
     );
   }
 }

@@ -18,16 +18,21 @@ class FTButton extends StatelessWidget {
               Color(0xff7832F0),
             ],
           ),
+          borderRadius: BorderRadius.all(Radius.circular(11)),
         ),
-        child: Text(
-          this._buttonText,
-          style: TextStyle(
-            color: Colors.white,
-            fontSize: 15,
-            letterSpacing: -0.3,
+        height: 46,
+        child: Center(
+          child: Text(
+            this._buttonText,
+            style: TextStyle(
+              color: Colors.white,
+              fontSize: 15,
+              letterSpacing: -0.3,
+            ),
           ),
         ),
       ),
+
     );
   }
 }
