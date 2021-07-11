@@ -18,35 +18,64 @@ class _ProfileState extends State<Profile> {
       child: Column(
         children: [
           // Кошелек
-          FTContainer.white(Column(
+          Padding(
+            padding: const EdgeInsets.only(bottom: 10),
+            child: FTContainer.white(
+              Column(
+                children: [
+                  Padding(
+                    padding: const EdgeInsets.only(bottom: 20),
+                    child: Row(
+                      children: [
+                        FTText.casual("Кошелек"),
+                        Icon(Icons.timer_sharp)
+                      ],
+                      mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                    ),
+                  ),
+                  Padding(
+                    padding: const EdgeInsets.only(bottom: 10),
+                    child: FTText.grey("Ваш баланс"),
+                  ),
+                  Padding(
+                    padding: const EdgeInsets.only(bottom: 20),
+                    child: FTText.largeNumbers("15 236.00 ₽"),
+                  ),
+                  FTButton.violet(
+                    "Выплатить",
+                    () {},
+                  ),
+                ],
+                mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                crossAxisAlignment: CrossAxisAlignment.start,
+              ),
+            ),
+          ),
+          Row(
             children: [
-              Padding(
-                padding: const EdgeInsets.only(bottom: 20),
-                child: Row(
+              FTContainer.white(
+                Column(
                   children: [
-                    FTText.casual("Кошелек"),
-                    Icon(Icons.timer_sharp)
+                    FTText.grey("Ждет зачисления"),
+                    FTText.bigNumbers("6 703.50 ₽"),
                   ],
-                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                  crossAxisAlignment: CrossAxisAlignment.start,
                 ),
               ),
-              Padding(
-                padding: const EdgeInsets.only(bottom: 10),
-                child: FTText.grey("Ваш баланс"),
+              SizedBox(
+                width: 10,
               ),
-              Padding(
-                padding: const EdgeInsets.only(bottom: 20),
-                child: FTText.largeNumbers("15 236.00 ₽"),
-              ),
-              FTButton.violet(
-                "Выплатить",
-                (){},
-              ),
-              
+              FTContainer.white(
+                Column(
+                  children: [
+                    FTText.grey("Получено за все время"),
+                    FTText.bigNumbers("6 703.50 ₽"),
+                  ],
+                  crossAxisAlignment: CrossAxisAlignment.start,
+                )
+              )
             ],
-            mainAxisAlignment: MainAxisAlignment.spaceBetween,
-            crossAxisAlignment: CrossAxisAlignment.start,
-          )),
+          ),
         ],
       ),
     );
@@ -66,11 +95,11 @@ class FTContainer extends StatelessWidget {
 
     return Container(
       child: child,
-      padding: EdgeInsets.all(20),
+      padding: EdgeInsets.only(left: 25, right: 25, bottom: 20, top: 20),
       decoration: BoxDecoration(
           color: Colors.white,
           borderRadius: BorderRadius.all(Radius.circular(14))),
-      width: MediaQuery.of(context).size.width,
+      // width: MediaQuery.of(context).size.width,
       // width: 100,
     );
   }

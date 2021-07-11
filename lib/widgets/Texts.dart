@@ -55,7 +55,7 @@ class FTText extends StatelessWidget {
   }
   FTText.grey(this._text) {
     this._style = TextStyle(
-      color: Colors.grey[350],
+      color: Colors.grey[300],
       fontSize: 15,
     );
   }
