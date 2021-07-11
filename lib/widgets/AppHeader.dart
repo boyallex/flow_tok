@@ -33,7 +33,7 @@ class AppHeader extends StatelessWidget implements PreferredSizeWidget {
                     padding: const EdgeInsets.only(left: 20),
                     child: Icon(Icons.timer_sharp),
                   ),
-                  FTText(_pageName, Colors.black, true),
+                  FTText.casual(_pageName),
                   Padding(
                     padding: const EdgeInsets.only(right: 20),
                     child: Icon(Icons.account_circle),

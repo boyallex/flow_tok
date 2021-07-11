@@ -24,7 +24,7 @@ class _ProfileState extends State<Profile> {
                 padding: const EdgeInsets.only(bottom: 20),
                 child: Row(
                   children: [
-                    FTText("Кошелек", Colors.black, true),
+                    FTText.casual("Кошелек"),
                     Icon(Icons.timer_sharp)
                   ],
                   mainAxisAlignment: MainAxisAlignment.spaceBetween,
@@ -32,16 +32,17 @@ class _ProfileState extends State<Profile> {
               ),
               Padding(
                 padding: const EdgeInsets.only(bottom: 10),
-                child: FTText("Ваш баланс", Colors.grey.shade400, false),
+                child: FTText.grey("Ваш баланс"),
               ),
               Padding(
                 padding: const EdgeInsets.only(bottom: 20),
-                child: FTText("15 236.00 ₽", Colors.black, true),
+                child: FTText.largeNumbers("15 236.00 ₽"),
               ),
               FTButton.violet(
                 "Выплатить",
                 (){},
-              )
+              ),
+              
             ],
             mainAxisAlignment: MainAxisAlignment.spaceBetween,
             crossAxisAlignment: CrossAxisAlignment.start,
