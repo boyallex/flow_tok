@@ -2,6 +2,8 @@
 
 import 'package:flow_tok/widgets/FTButton.dart';
 import 'package:flow_tok/widgets/FTContainer.dart';
+import 'package:flow_tok/widgets/Profile/Finance.dart';
+import 'package:flow_tok/widgets/Profile/Wallet.dart';
 import 'package:flow_tok/widgets/Texts.dart';
 import 'package:flutter/material.dart';
 
@@ -21,76 +23,16 @@ class _ProfileState extends State<Profile> {
           // Кошелек
           Padding(
             padding: const EdgeInsets.only(bottom: 10),
-            child: FTContainer.white(
-              Column(
-                children: [
-                  Padding(
-                    padding: const EdgeInsets.only(bottom: 20),
-                    child: Row(
-                      children: [
-                        FTText.casual("Кошелек"),
-                        Icon(Icons.timer_sharp),
-                      ],
-                      mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                    ),
-                  ),
-                  Padding(
-                    padding: const EdgeInsets.only(bottom: 10),
-                    child: FTText.grey("Ваш баланс"),
-                  ),
-                  Padding(
-                    padding: const EdgeInsets.only(bottom: 20),
-                    child: FTText.largeNumbers("15 236.00 ₽"),
-                  ),
-                  FTButton.violet(
-                    "Выплатить",
-                    () {},
-                  ),
-                ],
-                mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                crossAxisAlignment: CrossAxisAlignment.start,
-              ),
-            ),
+            child: Wallet(),
           ),
           // Ждет зачисления
           Row(
             children: [
-              FTContainer.white(
-                Column(
-                  children: [
-                    Padding(
-                      padding: const EdgeInsets.only(bottom: 10),
-                      child: SizedBox(
-                        child: FTText.grey("Ждет зачисления"),
-                        width: 93,
-                      ),
-                    ),
-                    FTText.bigNumbers("6 703.50 ₽"),
-                  ],
-                  crossAxisAlignment: CrossAxisAlignment.start,
-                ),
-              ),
+              Deposits(),
               SizedBox(
                 width: 10,
               ),
-              FTContainer.white(
-                Container(
-                  child: Column(
-                    children: [
-                      Padding(
-                        padding: const EdgeInsets.only(bottom: 10),
-                        child: SizedBox(
-                          child: FTText.grey("Получено за все время"),
-                          width: 102,
-                        ),
-                      ),
-                      FTText.bigNumbers("6184953.50 ₽"),
-                    ],
-                    crossAxisAlignment: CrossAxisAlignment.start,
-                    
-                  ),
-                ),
-              )
+              Total(),
             ],
           ),
           Padding(
