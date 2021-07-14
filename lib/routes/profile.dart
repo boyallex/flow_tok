@@ -1,6 +1,7 @@
 // import 'dart:js';
 
 import 'package:flow_tok/widgets/FTButton.dart';
+import 'package:flow_tok/widgets/FTContainer.dart';
 import 'package:flow_tok/widgets/Texts.dart';
 import 'package:flutter/material.dart';
 
@@ -72,39 +73,88 @@ class _ProfileState extends State<Profile> {
               SizedBox(
                 width: 10,
               ),
-              FTContainer.white(Column(
-                children: [
-                  Padding(
-                    padding: const EdgeInsets.only(bottom: 10),
-                    child: SizedBox(
-                      child: FTText.grey("Получено за все время"),
-                      width: 102,
-                    ),
+              FTContainer.white(
+                Container(
+                  child: Column(
+                    children: [
+                      Padding(
+                        padding: const EdgeInsets.only(bottom: 10),
+                        child: SizedBox(
+                          child: FTText.grey("Получено за все время"),
+                          width: 102,
+                        ),
+                      ),
+                      FTText.bigNumbers("6184953.50 ₽"),
+                    ],
+                    crossAxisAlignment: CrossAxisAlignment.start,
+                    
                   ),
-                  FTText.bigNumbers("6 703.50 ₽"),
-                ],
-                crossAxisAlignment: CrossAxisAlignment.start,
-              ))
+                ),
+              )
             ],
           ),
+          Padding(
+            padding: const EdgeInsets.only(top: 10),
+            child: FTContainer.white(
+              Column(
+                children: [
+                  FTText.casual("Показатели"),
+                  SizedBox(
+                    height: 20,
+                  ),
+                  Row(
+                    children: [
+                      Column(
+                        children: [
+                          Container(
+                            child: FTText.greyMini("Среднее кол-во просмотров"),
+                            width: 96,
+                          ),
+                          SizedBox(
+                            height: 8,
+                          ),
+                          FTText.bigNumbers("2.6М"),
+                        ],
+                        crossAxisAlignment: CrossAxisAlignment.start,
+                      ),
+                      Column(
+                        children: [
+                          Container(
+                            child: FTText.greyMini("Выплата за один ролик"),
+                            width: 75,
+                          ),
+                          SizedBox(
+                            height: 8,
+                          ),
+                          FTText.bigNumbers("2.6М"),
+                        ],
+                        crossAxisAlignment: CrossAxisAlignment.start,
+                      ),
+                      Column(
+                        children: [
+                          Container(
+                            child:
+                                FTText.greyMini("Рейтинг для рекламодателей"),
+                            width: 110,
+                          ),
+                          SizedBox(
+                            height: 8,
+                          ),
+                          FTText.green("4.6", 19, true),
+                        ],
+                        crossAxisAlignment: CrossAxisAlignment.start,
+                      ),
+                    ],
+                    mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                    crossAxisAlignment: CrossAxisAlignment.start,
+                  ),
+                ],
+                crossAxisAlignment: CrossAxisAlignment.start,
+              ),
+            ),
+          )
         ],
       ),
-    );
-  }
-}
-
-class FTContainer extends StatelessWidget {
-  final Widget child;
-  const FTContainer.white(this.child);
-
-  @override
-  Widget build(BuildContext context) {
-    return Container(
-      child: child,
-      padding: EdgeInsets.only(left: 25, right: 25, bottom: 20, top: 20),
-      decoration: BoxDecoration(
-          color: Colors.white,
-          borderRadius: BorderRadius.all(Radius.circular(14))),
     );
   }
 }

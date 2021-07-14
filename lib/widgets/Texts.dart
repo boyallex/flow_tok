@@ -59,6 +59,19 @@ class FTText extends StatelessWidget {
       fontSize: 15,
     );
   }
+  FTText.greyMini(this._text) {
+    this._style = TextStyle(
+      color: Colors.grey[400],
+      fontSize: 13,
+    );
+  }
+  FTText.green(this._text, [double? font_size = 0, bool isBold = false]) {
+    this._style = TextStyle(
+      color: Colors.greenAccent.shade400,
+      fontSize: font_size == 0 ? 17 : font_size,
+      fontWeight: isBold ? FontWeight.bold : FontWeight.w500,
+    );
+  }
   @override
   Widget build(BuildContext context) {
     return Text(
