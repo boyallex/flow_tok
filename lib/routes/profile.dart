@@ -1,8 +1,8 @@
 // import 'dart:js';
 
-import 'package:flow_tok/widgets/FTButton.dart';
 import 'package:flow_tok/widgets/FTContainer.dart';
 import 'package:flow_tok/widgets/Profile/Finance.dart';
+import 'package:flow_tok/widgets/Profile/ReferralProgram.dart';
 import 'package:flow_tok/widgets/Profile/Wallet.dart';
 import 'package:flow_tok/widgets/Texts.dart';
 import 'package:flutter/material.dart';
@@ -28,11 +28,21 @@ class _ProfileState extends State<Profile> {
           // Ждет зачисления
           Row(
             children: [
-              Deposits(),
+              Container(
+                child: Deposits(),
+                constraints: BoxConstraints(
+                  minWidth: 180,
+                ),
+              ),
               SizedBox(
                 width: 10,
               ),
-              Total(),
+              Container(
+                child: Total(),
+                constraints: BoxConstraints(
+                  minWidth: 200,
+                ),
+              ),
             ],
           ),
           Padding(
@@ -94,7 +104,11 @@ class _ProfileState extends State<Profile> {
                 crossAxisAlignment: CrossAxisAlignment.start,
               ),
             ),
-          )
+          ),
+          Padding(
+            padding: const EdgeInsets.only(top: 10),
+            child: ReferralProgram(),
+          ),
         ],
       ),
     );
