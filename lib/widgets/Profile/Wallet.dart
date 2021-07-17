@@ -17,7 +17,9 @@ class Wallet extends StatelessWidget {
             child: Row(
               children: [
                 FTText.casual("Кошелек"),
-                Icon(Icons.timer_sharp),
+                Image(
+                  image: AssetImage("assets/img/clock.png"),
+                ),
               ],
               mainAxisAlignment: MainAxisAlignment.spaceBetween,
             ),

@@ -14,8 +14,6 @@ class AppHeader extends StatelessWidget implements PreferredSizeWidget {
           color: Colors.grey.shade300,
         )
       ]),
-      // width: MediaQuery.of(context).size.width,
-      // height: 102,
       child: Container(
         decoration: BoxDecoration(
           color: Colors.white,
@@ -32,7 +30,9 @@ class AppHeader extends StatelessWidget implements PreferredSizeWidget {
             children: [
               Padding(
                 padding: const EdgeInsets.only(left: 20),
-                child: Icon(Icons.timer_sharp),
+                child: Image(
+                  image: AssetImage("assets/img/flowTok.png"),
+                ),  
               ),
               FTText.casual(_pageName),
               Padding(

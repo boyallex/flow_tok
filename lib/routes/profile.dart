@@ -18,7 +18,7 @@ class _ProfileState extends State<Profile> {
   Widget build(BuildContext context) {
     return Padding(
       padding: const EdgeInsets.all(10.0),
-      child: Column(
+      child: ListView(
         children: [
           // Кошелек
           Padding(

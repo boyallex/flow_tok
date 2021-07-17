@@ -7,11 +7,13 @@ class ReferralLink extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
-      child: Text(this.link),
+      child: Center(child: Text(this.link)),
       decoration: BoxDecoration(
-        color: Colors.greenAccent.shade400,
+        color: Colors.grey.shade200,
         borderRadius: BorderRadius.all(Radius.circular(30)),
+        
       ),
+      height: 36,
     );
   }
 }

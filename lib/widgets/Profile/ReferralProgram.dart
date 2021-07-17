@@ -17,16 +17,15 @@ class ReferralProgram extends StatelessWidget {
           SizedBox(
             height: 25,
           ),
-          Text("Что-то, что нужно придумать как сделать"),
+          ReferralLink("https://flowtok.com/ref/5f3eba819845264b903e746f"),
           SizedBox(
             height: 20,
           ),
-          ReferralLink("https://flowtok.com/ref/5f3eba819845264b903e746f"),
-          // Row(
-          //   children: [
-          //     FTText.grey("_text")
-          //   ],
-          // ),
+          Row(
+            children: [
+              FTText.grey("_text")
+            ],
+          ),
         ],
         crossAxisAlignment: CrossAxisAlignment.start,
       ),
