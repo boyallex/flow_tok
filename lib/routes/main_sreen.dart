@@ -1,6 +1,7 @@
 // import 'dart:js';
 import 'package:flow_tok/routes/profile.dart';
 import 'package:flow_tok/widgets/AppHeader.dart';
+import 'package:flow_tok/widgets/Settings/Settings.dart';
 import 'package:flutter/material.dart';
 
 class MainScreen extends StatefulWidget {
@@ -20,7 +21,7 @@ class _MainScreenState extends State<MainScreen> {
   List<Widget> _widgetOptions = <Widget>[
     Profile(),  
     Text("Здесь будут задания"),
-    Text("Здесь будут настройки"),
+    Settings(),
   ];
 
   final _pageNames = [
