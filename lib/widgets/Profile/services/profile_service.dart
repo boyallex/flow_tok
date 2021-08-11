@@ -5,13 +5,13 @@ import 'globals.dart' as globals;
 
 class ProfileService {
 
-  Future<ProfileData> getData() async {
+  Future<List<ProfileData>> getData() async {
     // final data = await http.get('mobyte.com');
     // if(data.statusCOde == 200){
     //   return ProfileData.fromJson(jsonDecode(data.data));
     // }
-    // final data = globals.json;
-    // return Future.delayed(Duration(seconds: 2)).then((_) => ProfileData(data));
-    return ProfileData(123);
+    final data = globals.json.map((e) => null);
+    return Future.delayed(Duration(seconds: 2)).then((_) => ProfileData.fromJson(data));
+    // return ProfileData(123);
   }
 }
