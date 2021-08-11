@@ -67,15 +67,38 @@ class _AccountState extends State<Account> {
             "О вас",
             style: TextStyle(
               fontSize: 17,
-              
             ),
           ),
-          SizedBox(height: 7,),
-          FTText.grey("Укажите актуальные данные и мы лучше подберем задания для Вас!"),
+          SizedBox(
+            height: 7,
+          ),
+          FTText.grey(
+              "Укажите актуальные данные и мы лучше подберем задания для Вас!"),
           SizedBox(
             height: 18,
           ),
-          
+          GreyLine.horisontal(),
+          SizedBox(
+            height: 20,
+          ),
+          Row(
+            children: [
+              Text(
+                "Выйти из профиля",
+                style: TextStyle(
+                  fontSize: 17,
+                ),
+              ),
+              Text(
+                "Выйти",
+                style: TextStyle(
+                  color: Colors.redAccent.shade400,
+                  fontSize: 16,
+                ),
+              ),
+            ],
+            mainAxisAlignment: MainAxisAlignment.spaceBetween,
+          ),
         ],
         crossAxisAlignment: CrossAxisAlignment.start,
       ),

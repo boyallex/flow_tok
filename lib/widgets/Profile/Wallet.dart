@@ -1,4 +1,6 @@
+import 'package:flow_tok/widgets/Profile/bloc/profile_bloc.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
 
 import '../FTButton.dart';
 import '../FTContainer.dart';
@@ -28,10 +30,7 @@ class Wallet extends StatelessWidget {
             padding: const EdgeInsets.only(bottom: 10),
             child: FTText.grey("Ваш баланс"),
           ),
-          Padding(
-            padding: const EdgeInsets.only(bottom: 20),
-            child: FTText.largeNumbers("15 236.00 ₽"),
-          ),
+          WalletBalace(),
           FTButton.violet(
             "Выплатить",
             () {},
@@ -43,3 +42,32 @@ class Wallet extends StatelessWidget {
     );
   }
 }
+
+class WalletBalace extends StatelessWidget {
+  const WalletBalace({
+    Key? key,
+  }) : super(key: key);
+
+  @override
+  Widget build(BuildContext context) {
+    return BlocBuilder<ProfileBloc, ProfileState>(
+      builder: (context, state) {
+        if (state is ProfileInProgress) {
+          return CircularProgressIndicator.adaptive();
+        } else if (state is ProfileDownloadedSuccess) {
+          return Padding(
+            padding: const EdgeInsets.only(bottom: 20),
+            child: FTText.largeNumbers('${state.data.walletBalance} ₽'),
+          );
+        } else if (state is ProfileFailed) {
+          return Padding(
+            padding: const EdgeInsets.only(bottom: 20),
+            child: FTText.largeNumbers('Failed'),
+          );
+        }
+        return Container();
+      },
+    );
+  }
+}
+

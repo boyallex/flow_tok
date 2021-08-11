@@ -1,8 +1,11 @@
 // import 'dart:js';
 import 'package:flow_tok/routes/profile.dart';
 import 'package:flow_tok/widgets/AppHeader.dart';
+import 'package:flow_tok/widgets/Profile/bloc/profile_bloc.dart';
+import 'package:flow_tok/widgets/Profile/services/profile_service.dart';
 import 'package:flow_tok/widgets/Settings/Settings.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
 
 class MainScreen extends StatefulWidget {
   const MainScreen({Key? key}) : super(key: key);
@@ -19,7 +22,12 @@ class _MainScreenState extends State<MainScreen> {
   }
 
   List<Widget> _widgetOptions = <Widget>[
-    Profile(),  
+    BlocProvider(
+      create: (context) => ProfileBloc(
+        ProfileService(),
+      )..add(ProfileStarted()),
+      child: Profile(),
+    ),
     Text("Здесь будут задания"),
     Settings(),
   ];

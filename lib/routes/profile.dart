@@ -3,7 +3,7 @@
 import 'package:flow_tok/widgets/FTContainer.dart';
 import 'package:flow_tok/widgets/Profile/Finance.dart';
 import 'package:flow_tok/widgets/Profile/ReferralProgram.dart';
-import 'package:flow_tok/widgets/Profile/Wallet.dart';
+import 'package:flow_tok/widgets/Profile/wallet.dart';
 import 'package:flow_tok/widgets/Texts.dart';
 import 'package:flutter/material.dart';
 

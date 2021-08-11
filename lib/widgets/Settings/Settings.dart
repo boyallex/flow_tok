@@ -18,7 +18,6 @@ class _SettingsState extends State<Settings> {
           padding: const EdgeInsets.all(10.0),
           child: Account(),
         ),
-
       ],
     );
   }
