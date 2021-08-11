@@ -21,7 +21,7 @@ class ProfileBloc extends Bloc<ProfileEvent, ProfileState> {
       try {
         yield ProfileInProgress();
         final data = await service.getData();
-        yield ProfileDownloadedSuccess(data);
+        yield ProfileDownloadedSuccess(data: data);
       } on Exception catch (_) {
         yield ProfileFailed();
       }

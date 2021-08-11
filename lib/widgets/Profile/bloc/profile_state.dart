@@ -8,8 +8,8 @@ class ProfileInitial extends ProfileState {}
 
 class ProfileInProgress extends ProfileState {}
 class ProfileDownloadedSuccess extends ProfileState {
-  ProfileData data;
-  ProfileDownloadedSuccess(this.data);
+  List<ProfileData> data;
+  ProfileDownloadedSuccess({required this.data});
   
 }
 class ProfileFailed extends ProfileState {}

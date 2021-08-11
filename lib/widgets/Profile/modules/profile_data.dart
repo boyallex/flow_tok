@@ -1,10 +1,16 @@
+import 'package:flutter/cupertino.dart';
+
 class ProfileData {
-  double? walletBalance;
-  String? name;
-  String? account;
-  // ProfileData(this.walletBalance);
-  ProfileData({this.name, this.walletBalance, this.account});
-  factory ProfileData.fromJson(Map<String, dynamic> json){
+  double walletBalance;
+  String name;
+  String account;
+  // ProfileData(this.walletBalance)
+  ProfileData({
+    required this.name,
+    required this.walletBalance,
+    required this.account,
+  });
+  factory ProfileData.fromJson(Map<String, dynamic> json) {
     return ProfileData(
       name: json["name"],
       walletBalance: json["balance"],

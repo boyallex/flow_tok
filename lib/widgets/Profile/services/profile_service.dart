@@ -10,8 +10,9 @@ class ProfileService {
     // if(data.statusCOde == 200){
     //   return ProfileData.fromJson(jsonDecode(data.data));
     // }
-    final data = globals.json.map((e) => null);
-    return Future.delayed(Duration(seconds: 2)).then((_) => ProfileData.fromJson(data));
+    final data = globals.json;
+    // data.where((element) => false);
+    return Future.delayed(Duration(seconds: 2)).then((_) => data.map((e) => ProfileData.fromJson(e)).toList(),);
     // return ProfileData(123);
   }
 }

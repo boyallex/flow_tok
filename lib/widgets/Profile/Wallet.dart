@@ -57,7 +57,7 @@ class WalletBalace extends StatelessWidget {
         } else if (state is ProfileDownloadedSuccess) {
           return Padding(
             padding: const EdgeInsets.only(bottom: 20),
-            child: FTText.largeNumbers('${state.data.walletBalance} ₽'),
+            child: FTText.largeNumbers('${state.data.first.walletBalance} ₽'),
           );
         } else if (state is ProfileFailed) {
           return Padding(
