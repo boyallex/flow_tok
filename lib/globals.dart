@@ -1,12 +1,13 @@
 library flow_tok.globals;
 final json = [
   {
-    "name": "karinakross",
+    "name": "Карина",
     "account": "karinakross",
     "balance": 15236,
+    
   },
   {
-    "name": "Karinakross",
+    "name": "Артем",
     "account": "Karinakross",
     "balance": 10,
   },

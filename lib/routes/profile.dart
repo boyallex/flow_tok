@@ -1,5 +1,3 @@
-// import 'dart:js';
-
 import 'package:flow_tok/widgets/FTContainer.dart';
 import 'package:flow_tok/widgets/Profile/Finance.dart';
 import 'package:flow_tok/widgets/Profile/ReferralProgram.dart';

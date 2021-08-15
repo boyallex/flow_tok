@@ -4,6 +4,8 @@ import 'package:flow_tok/widgets/AppHeader.dart';
 import 'package:flow_tok/widgets/Profile/bloc/profile_bloc.dart';
 import 'package:flow_tok/widgets/Profile/services/profile_service.dart';
 import 'package:flow_tok/widgets/Settings/Settings.dart';
+import 'package:flow_tok/widgets/Settings/bloc/settings_bloc.dart';
+import 'package:flow_tok/widgets/Settings/services/settings_services.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 
@@ -25,11 +27,20 @@ class _MainScreenState extends State<MainScreen> {
     BlocProvider(
       create: (context) => ProfileBloc(
         ProfileService(),
-      )..add(ProfileStarted()),
+      )..add(
+          ProfileStarted(),
+        ),
       child: Profile(),
     ),
     Text("Здесь будут задания"),
-    Settings(),
+    BlocProvider(
+      create: (context) => SettingsBloc(
+        SettingsService(),
+      )..add(
+          SettingsStarted(),
+        ),
+      child: Settings(),
+    ),
   ];
 
   final _pageNames = [
